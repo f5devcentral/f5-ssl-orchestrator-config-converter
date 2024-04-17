@@ -15,7 +15,7 @@
 
 ## Introduction
 
-F5 SSL Orchestrator config converter is an early access, self-contained application, designed for the purpose of transitioning/converting SSL Orchestrator configurations from the BIG-IP platform to the next-generation BIG-IP environment. This application is distributed as a Docker image, allowing users to create the converted configuration on BIG-IP Next CM.
+F5 SSL Orchestrator config converter is an early access, self-contained application, designed for the purpose of transitioning/converting SSL Orchestrator configurations from the BIG-IP platform to the next-generation BIG-IP environment. This application is distributed as a Docker image, allowing users to create the converted configuration on BIG-IP Next Central Manager.
 
 Refer to product documentation for more details.
 
