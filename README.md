@@ -3,7 +3,7 @@
 # F5 SSL ORCHESTRATOR CONFIG CONVERTER
 
 
-[Documentation](https://clouddocs.f5.com/products/extensions/f5-ssl-orchestrator-config-converter/latest/userguide/getting_started.html)
+[Documentation](https://clouddocs.f5.com/ssl-orchestrator-config-converter/1.0/cm_sslo_how_to_migrate_configuration.html)
 
 [![docker pulls](https://img.shields.io/docker/pulls/f5devcentral/f5-ssl-orchestrator-config-converter.svg)](https://hub.docker.com/r/f5devcentral/f5-ssl-orchestrator-config-converter)
 [![image size](https://img.shields.io/docker/image-size/f5devcentral/f5-ssl-orchestrator-config-converter?sort=semver)](https://hub.docker.com/r/f5devcentral/f5-ssl-orchestrator-config-converter)
