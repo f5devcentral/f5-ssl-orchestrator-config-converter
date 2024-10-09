@@ -3,7 +3,7 @@
 # F5 SSL ORCHESTRATOR CONFIG CONVERTER
 
 
-[Documentation](https://clouddocs.f5.com/ssl-orchestrator-config-converter/1.0/cm_sslo_how_to_migrate_configuration.html)
+[Documentation](https://clouddocs.f5networks.net/ssl-orchestrator-config-converter/2.0/cm_sslo_how_to_migrate_configuration.html)
 
 [![docker pulls](https://img.shields.io/docker/pulls/f5devcentral/f5-ssl-orchestrator-config-converter.svg)](https://hub.docker.com/r/f5devcentral/f5-ssl-orchestrator-config-converter)
 [![image size](https://img.shields.io/docker/image-size/f5devcentral/f5-ssl-orchestrator-config-converter?sort=semver)](https://hub.docker.com/r/f5devcentral/f5-ssl-orchestrator-config-converter)
@@ -39,17 +39,26 @@ Details about docker run command:
 ```
 Working directory in docker container /usr/app
 
-$ docker run -it --rm -v "$PWD":/usr/app/data <image_name:[TAG]> -i <data/input_ifile> -o <data/output.json>
+To convert and post the Classic BIG IP's SSL orchestrator configuration to the Central Manager : 
+
+$ docker run -it --rm -v "$PWD":/usr/app/data <image_name:[TAG]> -ucs <data/ucs_ifile> -o <data/output.json> -postToCM <Central-Manager IP>
 |--rm |                 Automatically remove the container when it exits.                                         |
 |-v   |--volume list    Bind mount a volume, Mount a volume from local to docker container.                       |
-|-i   | input file      <path> Specify path to input ifile.                                                       |
+|-ucs   | ucs package      <path> Specify path to ucs package.                                                       |
 |-o   | output file     <path> Specify output file for the converted json results. (default "data/output.json")   |
+|-postToCM | post payloads Specify Central-Manager IP to post the payloads from the converted json (generates migrationSummary.json) |
 |–log | logfile         <file> outputs log to the specified file. (default "os.Stdout")                           |
 
-NOTE: Due to the least privilege of user 'f5docker' as the default user in docker container, you need to create the output file first and make sure it can be written by other users including f5docker. Additionally, this also applies to logfile, if user provides -log flag.
+NOTE: Due to the least privilege of user 'f5docker' as the default user in docker container, you need to create the output file first and make sure it can be written by other users including f5docker. Additionally, this also applies to logfile, if user provides -log flag and migrationSummary.json, if user uses postToCM flag with docker run command.
 
 touch output.json
 chmod a+rw output.json
+
+touch migrationSummary.json
+chmod a+rw migrationSummary.json
+
+touch logfile.txt
+chmod a+rw logfile.txt
 
 ```
 
